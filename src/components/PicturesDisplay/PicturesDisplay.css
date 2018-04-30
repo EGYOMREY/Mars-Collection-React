@@ -1,0 +1,14 @@
+.PicturesDisplay{
+	padding-top: 0.8em;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	background-color:#BDBDBD;
+
+
+}
+@media (min-width: 769px){
+    .PicturesDisplay{
+        width:75%
+    }
+}

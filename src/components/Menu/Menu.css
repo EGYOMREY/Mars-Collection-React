@@ -1,0 +1,29 @@
+.Menu{
+    padding-top: 0.8em;
+    
+    width:100%;
+    text-align:center;
+    color:#212121;
+    -webkit-box-shadow:0 1px 3px rgba(0,0,0,0.12),0 1px 2px rgba(0,0,0,0.24);
+    box-shadow:0 1px 3px rgba(0,0,0,0.12),0 1px 2px rgba(0,0,0,0.24)
+}
+@media (min-width: 769px){
+    .Menu{
+        width:25%;
+        display:-webkit-box;
+        display:-ms-flexbox;
+        display:flex;
+        -webkit-box-orient:vertical;
+        -webkit-box-direction:normal;
+        -ms-flex-direction:column;
+        flex-direction:column
+    }
+}
+.menuBar__text{
+    padding:0.5em
+}
+.MenuButtonContainer {
+    display: flex;
+ flex-wrap: wrap;
+ justify-content: space-around;
+}

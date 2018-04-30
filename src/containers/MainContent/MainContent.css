@@ -1,0 +1,12 @@
+.MainContent {
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: row;
+}
+
+/*
+@media (min-width: 769px){
+    .MainContent{
+        flex-direction: row;
+    }
+}*/
