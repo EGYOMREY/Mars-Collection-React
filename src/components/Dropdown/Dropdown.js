@@ -17,7 +17,7 @@ const dropdown = (props) => {
 				)
 			})}
 		</Input>
-		)
+	);
 }
 
 export default dropdown;

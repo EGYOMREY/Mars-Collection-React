@@ -2,11 +2,13 @@ import React, {Component} from 'react';
 import { Row, Button, Col } from 'react-materialize';
 
 import './MenuOptions.css';
-import Dropdown from './Dropdown/Dropdown';
+import Dropdown from '../../components/Dropdown/Dropdown';
+
+import axios from 'axios';
 
 class MenuOptions extends Component {
 	state = {
-		chosenRover: '',
+		chosenRover: 'curiosity',
 		widthPic: '300',
 		heightPic: '300',
 		normalSearch: true,
@@ -20,9 +22,13 @@ class MenuOptions extends Component {
 		},
 		rovers: ['Curiosity', 'Opportunity', 'Spirit'],
 		picturestoDisplay: [6,7,8,9,10,11,12],
-		pictureSizes: [200,300,400,500,600]
+		pictureSizes: [200,300,400,500,600],
+		pictureData: null
 	}
 
+	componentDidMount() {
+		this.axiosCall();
+	}
 	chooseRoverHandler = (event, index, value) => {
 		this.setState({chosenRover: event.target.value});
 		console.log(event.target.value);
@@ -41,11 +47,36 @@ class MenuOptions extends Component {
 	chooseHeightHandler = (event) => {
 		this.setState({heightPic: event.target.value});
 		console.log(event.target.value);
+		console.log(this.state);
 	}
 
 	shouldComponentUpdate (nextProps, nextState){
 		return false;
 	}
+
+	axiosCall () {
+	function randomize(min, max) {
+        return Math.floor(Math.random() * (max - min + 1) + min);
+    }
+    let solParameter = randomize(1000, 2000);
+    let arreglo = null;
+
+	let url = 'https://api.nasa.gov/mars-photos/api/v1/rovers/' + this.state.chosenRover + '/photos?sol=' + solParameter + '&page=1&api_key=LQlfelUbO5f0rqk5UAS9REF5XhtwkG6oFX5TWOsc';
+		axios.get(url)
+        .then(response => {
+            //this.setState({pictureData: response.data});
+            arreglo = response.data.photos;
+            let filtrado = arreglo.filter( (el, index) => {
+            	return index%2 === 1;
+            })
+            console.log(filtrado);
+             console.log(arreglo);
+        });
+
+	}
+
+	
+
 
 	render () {
 		return (
