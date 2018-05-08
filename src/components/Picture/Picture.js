@@ -1,15 +1,15 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 
-import Curiosity from '../../assets/rover_curiosity.jpg';
-import {Button} from 'react-materialize';
+import './Picture.css';
 
+import Loader from '../UI/Loader/Loader';
 
-const picture = () => (
-	<div style={{position: 'relative'}}>
-		<img  src={Curiosity} style={{width: "400px", maxWidth: "100%"}} alt="curiosity"/>
-		<div style={{position: 'absolute', width: '100%', bottom: '10%', display: 'flex', justifyContent: 'space-around'}}>
-		<Button floating large className='pink' waves='light' icon='favorite' />
-		</div>
-	</div>
+const picture = (props) => (
+	<Fragment>
+		<Loader absolutePosition />
+		<img  src={props.sourcePicture} className="Picture" alt="curiosity" />
+	</Fragment>
 );
+
+
 export default picture;

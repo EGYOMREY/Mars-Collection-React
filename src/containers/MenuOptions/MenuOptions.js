@@ -4,79 +4,25 @@ import { Row, Button, Col } from 'react-materialize';
 import './MenuOptions.css';
 import Dropdown from '../../components/Dropdown/Dropdown';
 
-import axios from 'axios';
 
-class MenuOptions extends Component {
-	state = {
-		chosenRover: 'curiosity',
-		widthPic: '300',
-		heightPic: '300',
-		normalSearch: true,
-		randomSearch: false,
-		picsToDisplay: '6',
-		labels: {
+
+// Static content
+const ROVER_NAMES = ['Curiosity', 'Opportunity', 'Spirit'];
+const PICTURES_TO_DISPLAY = [6,7,8,9,10,11,12];
+const PICTURE_SIZES = [300,400,500,600];
+const labels = {
 			rovers: 'Rover',
 			picsToDisplay: 'No. of Pictures',
 			widthPic: 'Picture Width',
 			heightPic: 'Picture Height'
-		},
-		rovers: ['Curiosity', 'Opportunity', 'Spirit'],
-		picturestoDisplay: [6,7,8,9,10,11,12],
-		pictureSizes: [200,300,400,500,600],
-		pictureData: null
-	}
-
-	componentDidMount() {
-		this.axiosCall();
-	}
-	chooseRoverHandler = (event, index, value) => {
-		this.setState({chosenRover: event.target.value});
-		console.log(event.target.value);
-	}
-
-	choosePicsToDisplayHandler = (event) => {
-		this.setState({picsToDisplay: event.target.value});
-	console.log(event.target.value);
 		}
 
-	chooseWidthHandler = (event) => {
-		this.setState({widthPic: event.target.value});
-		console.log(event.target.value);
-	}
 
-	chooseHeightHandler = (event) => {
-		this.setState({heightPic: event.target.value});
-		console.log(event.target.value);
-		console.log(this.state);
-	}
+class MenuOptions extends Component {
 
-	shouldComponentUpdate (nextProps, nextState){
+shouldComponentUpdate (nextProps, nextState){
 		return false;
 	}
-
-	axiosCall () {
-	function randomize(min, max) {
-        return Math.floor(Math.random() * (max - min + 1) + min);
-    }
-    let solParameter = randomize(1000, 2000);
-    let arreglo = null;
-
-	let url = 'https://api.nasa.gov/mars-photos/api/v1/rovers/' + this.state.chosenRover + '/photos?sol=' + solParameter + '&page=1&api_key=LQlfelUbO5f0rqk5UAS9REF5XhtwkG6oFX5TWOsc';
-		axios.get(url)
-        .then(response => {
-            //this.setState({pictureData: response.data});
-            arreglo = response.data.photos;
-            let filtrado = arreglo.filter( (el, index) => {
-            	return index%2 === 1;
-            })
-            console.log(filtrado);
-             console.log(arreglo);
-        });
-
-	}
-
-	
-
 
 	render () {
 		return (
@@ -89,32 +35,29 @@ class MenuOptions extends Component {
 		    <Row>
 		        <Col s={12}>
 		        <Dropdown 
-		            optionsToDisplay={this.state.rovers} 
-		            handleSelection={this.chooseRoverHandler}
-		            selectLabel={this.state.labels.rovers}/>
+		            optionsToDisplay={ROVER_NAMES} 
+		            handleSelection={this.props.chooseRover}
+		            selectLabel={labels.rovers}/>
 		        <Dropdown 
-		            optionsToDisplay={this.state.picturestoDisplay} 
-		            handleSelection={this.choosePicsToDisplayHandler}
-		            selectLabel={this.state.labels.picsToDisplay}/>
+		            optionsToDisplay={PICTURES_TO_DISPLAY} 
+		            handleSelection={this.props.choosePicsToDisplay}
+		            selectLabel={labels.picsToDisplay}/>
 		        </Col>
 		    </Row>
 		    <Row>
 		        <Col s={12}>
 		        <Dropdown 
-		            optionsToDisplay={this.state.pictureSizes} 
-		            handleSelection={this.chooseWidthHandler}
-		            selectLabel={this.state.labels.widthPic}/>
+		            optionsToDisplay={PICTURE_SIZES} 
+		            handleSelection={this.props.chooseWidth}
+		            selectLabel={labels.widthPic}/>
 		        <Dropdown 
-		            optionsToDisplay={this.state.pictureSizes} 
-		            handleSelection={this.chooseHeightHandler}
-		            selectLabel={this.state.labels.heightPic}/>
+		            optionsToDisplay={PICTURE_SIZES} 
+		            handleSelection={this.props.chooseHeight}
+		            selectLabel={labels.heightPic}/>
 		        </Col>
 		    </Row>
 		    <Row>
 		        <Button wave="light" className="deep-orange">Search</Button>
-		    </Row>
-		    <Row>
-		        <Button wave="light" className="grey darken-1">Random Search</Button>
 		    </Row>
 		</div>
 		);

@@ -1,9 +1,9 @@
 .Menu{
     padding-top: 0.8em;
-    
     width:100%;
     text-align:center;
     color:#212121;
+box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
 
 }
 @media (min-width: 769px){
