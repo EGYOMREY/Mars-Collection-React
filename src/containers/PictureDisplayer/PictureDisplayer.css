@@ -9,24 +9,15 @@
     }
 }
 
-
-.PictureDates {
-	background-color: #FFF;
-	text-align: center;
-	width: 100%;
-	background-color: #CBCBCB;
-	margin-top: 0.1em;
-  
-}
-
-.PictureDates p {
-	margin: 0;
-}
-
 .PicturesToDisplay{
 	width: 100%;
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: space-around;
 	
+}
+
+.PictureCard {
+	position: relative;
+	 max-width: 100%;
 }

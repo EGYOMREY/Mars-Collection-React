@@ -1,6 +1,5 @@
 .Picture {
-	width: 300px;
-	height: 300px;
+	margin-bottom:  1em;
 	max-width: 100%;
 	z-index: 10;
 	position: relative;

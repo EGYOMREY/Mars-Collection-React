@@ -4,12 +4,10 @@ import { Row, Button, Col } from 'react-materialize';
 import './MenuOptions.css';
 import Dropdown from '../../components/Dropdown/Dropdown';
 
-
-
 // Static content
 const ROVER_NAMES = ['Curiosity', 'Opportunity', 'Spirit'];
 const PICTURES_TO_DISPLAY = [6,7,8,9,10,11,12];
-const PICTURE_SIZES = [300,400,500,600];
+const PICTURE_SIZES = [300,400,500,600, 800];
 const labels = {
 			rovers: 'Rover',
 			picsToDisplay: 'No. of Pictures',
@@ -57,7 +55,7 @@ shouldComponentUpdate (nextProps, nextState){
 		        </Col>
 		    </Row>
 		    <Row>
-		        <Button wave="light" className="deep-orange">Search</Button>
+		        <Button onClick={this.props.searchHandler} wave="light" className="deep-orange">Search</Button>
 		    </Row>
 		</div>
 		);

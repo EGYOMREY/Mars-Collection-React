@@ -1,7 +1,6 @@
 import React from 'react';
 import {Input } from 'react-materialize';
 
-
 const dropdown = (props) => {
 
 	let options = props.optionsToDisplay;
