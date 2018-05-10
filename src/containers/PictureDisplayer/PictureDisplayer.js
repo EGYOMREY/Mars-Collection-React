@@ -11,14 +11,14 @@ import './PictureDisplayer.css';
 
 
 class PictureDisplayer extends Component {
-
+/*
 	shouldComponentUpdate(nextProps, nextState){
+					console.log(nextProps);
 		if (nextProps.initialSearchBegan || this.props.pictureWidth !== nextProps.pictureWidth || this.props.pictureHeight !== nextProps.pictureHeight){
 			return true;
 		}
 			return false;
-	}
-
+	}*/
 
 	render () {
 		let photosToDisplay = null;
@@ -48,7 +48,7 @@ class PictureDisplayer extends Component {
 			});
 		}
 
-		let displayPicturesComponent = this.props.isLoading ? <Loader absolutePosition /> 
+		let displayPicturesComponent = (this.props.isLoading) ? <Loader absolutePosition /> 
 				: (this.props.photosData) ? <Row>
 												<Col s={12} className='PicturesToDisplay'>
 													{photosToDisplay}
@@ -56,11 +56,22 @@ class PictureDisplayer extends Component {
 											</Row>
 				: null;
 
+		let messageFeedback = "Press the Search Button to begin";
+		if (this.props.requestError || (this.props.initialSearchBegan && !this.props.isLoading && !this.props.photosData) ) {
+			messageFeedback = "There was an error trying to fetch the images, please hit the Search button again";
+		} else if (this.props.isLoading) {
+			messageFeedback = "Loading...";
+		} else if (this.props.photosData) {
+			messageFeedback = `Showing Pictures from Mars taken on Sol date: 1820, Earth date: ${this.props.earthDate}`;
+		} else if (this.props.photosData && this.props.initialSearchBegan) {
+			messageFeedback = "No results, please hit the Search button again";
+		}
+
 
 			return (
 				<div className="PictureDisplayer">
 					<MessageDisplayer> 
-					{!this.props.initialSearchBegan ? "Press the Search Button to begin" : (this.props.isLoading) ? "Loading..." : `Results from the rover: ${this.props.chosenRover} on Sol date: 1820, Earth date: ${this.props.earthDate}`}
+					{messageFeedback}
 					</MessageDisplayer>
 					{displayPicturesComponent}
 				</div>

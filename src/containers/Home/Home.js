@@ -16,10 +16,11 @@ class Home extends Component {
 		picsToDisplay: '6',
 		pictureData: null,
 		likedPictures: [],
-		searchAgain: true,
 		loading: false,
 		initialSearchBegan: false,
-		earthDate: null
+		earthDate: null,
+		requestError: false,
+		solDate: null
 	}
 
 	chooseRoverHandler = (event) => {
@@ -42,33 +43,30 @@ class Home extends Component {
 		this.setState({likedPictures: [...this.state.likedPictures, picture]});
 	}
 
+
 	axiosCall = () => {
 		function randomize(min, max) {
 	        return Math.floor(Math.random() * (max - min + 1) + min);
 	    }
 	    let solParameter = randomize(1000, 2000);
-	    this.setState({loading: true});
-	   
+	    this.setState({loading: true, initialSearchBegan: true});
 		let url = 'https://api.nasa.gov/mars-photos/api/v1/rovers/' + this.state.chosenRover + '/photos?sol=' + solParameter + '&page=1&api_key=LQlfelUbO5f0rqk5UAS9REF5XhtwkG6oFX5TWOsc';
 			axios.get(url)
 	        .then(response => {
 	        	const marsData = response.data;
 	        	if (response.data.photos.length > 0) {
-	        		this.setState({pictureData: marsData, loading: false, searchAgain: false, initialSearchBegan: true, earthDate: response.data.photos[0].earth_date});
+	        		this.setState({pictureData: marsData, loading: false, earthDate: response.data.photos[0].earth_date, solDate: solParameter});
 	        	} else {
-	        		console.log("Axios ELSE");
-	        		this.setState({searchAgain: true});
+	        		this.setState({loading: false});
 	        	}
 	        })
 	        .catch(error => {
 	        	console.log("SEARCH AGAIN, ERROR: ", error);
-	        	this.setState({searchAgain: true});
+	        	this.setState({requestError: true, loading: false});
 	        });
 	}
 
-
 	render() {
-		
 
 		return (
 			<div className="Home">
@@ -83,13 +81,12 @@ class Home extends Component {
 				isLoading={this.state.loading}
 				photosData={this.state.pictureData}
 				addToFavorites={this.addToFavoritesHandler}
-				searchState={this.state.searchAgain}
 				initialSearchBegan={this.state.initialSearchBegan}
 				pictureWidth={this.state.widthPic}
 				pictureHeight={this.state.heightPic}
 				picsToDisplay={this.state.picsToDisplay}
-				chosenRover={this.state.chosenRover}
-				earthDate={this.state.earthDate}/>
+				earthDate={this.state.earthDate}
+				requestError={this.state.requestError}/>
 			</div>
 
 			);

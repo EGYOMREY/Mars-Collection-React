@@ -3,7 +3,7 @@
     width:100%;
     text-align:center;
     color:#212121;
-box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
 
 }
 @media (min-width: 769px){
@@ -15,7 +15,8 @@ box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
         -webkit-box-orient:vertical;
         -webkit-box-direction:normal;
         -ms-flex-direction:column;
-        flex-direction:column
+        flex-direction:column;
+        min-height: 100vh;
     }
 }
 
