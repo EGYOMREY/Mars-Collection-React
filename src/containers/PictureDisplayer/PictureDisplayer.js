@@ -3,7 +3,7 @@ import React, { Component }  from 'react';
 import Picture from '../../components/Picture/Picture';
 import MessageDisplayer from '../../components/MessageDisplayer/MessageDisplayer';
 import { Row, Col} from 'react-materialize';
-import {Button} from 'react-materialize';
+
 import LikeButton from '../../components/UI/LikeButton/LikeButton';
 
 import Loader from '../../components/UI/Loader/Loader';
@@ -21,8 +21,7 @@ class PictureDisplayer extends Component {
 			const photosArray = this.props.photosData.photos;
 			let filteredArray = photosArray.filter( (el, index) => {
 		            return index%2 === 1;
-		           });
-			
+		           });			
 			photosToDisplay = filteredArray.map( ob => {
 				return (
 					<div className="PictureCard" key={ob.id}>
@@ -38,7 +37,7 @@ class PictureDisplayer extends Component {
 			});
 		}
 
-		let displayPicturesComponent = (this.props.isLoading) ? <Loader absolutePosition /> 
+		let displayPicturesComponent = (this.props.isLoading) ? <Loader defaultColor /> 
 				: (this.props.photosData) ? <Row>
 												<Col s={12} className='PicturesToDisplay'>
 													{photosToDisplay}

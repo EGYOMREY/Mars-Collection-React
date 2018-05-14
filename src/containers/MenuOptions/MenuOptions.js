@@ -6,11 +6,9 @@ import Dropdown from '../../components/Dropdown/Dropdown';
 
 // Static content
 const ROVER_NAMES = ['Curiosity', 'Opportunity', 'Spirit'];
-const PICTURES_TO_DISPLAY = [6,7,8,9,10,11,12];
 const PICTURE_SIZES = [300,400,500,600, 800];
 const labels = {
 			rovers: 'Rover',
-			picsToDisplay: 'No. of Pictures',
 			widthPic: 'Picture Width',
 			heightPic: 'Picture Height'
 		}
@@ -27,19 +25,15 @@ shouldComponentUpdate (nextProps, nextState){
 		<div className="Menu">
 		    <Row>
 		        <Col s={12}>
-		        <p>Welcome to the Mars Collection, where you can see pictures of the Red Planet. Select between the 3 rovers to display pictures of their missions in Mars, how many pictures to display and their dimentions. </p>
+		        <p>Welcome to the Mars Collection, where you can see pictures of the Red Planet. Select between the 3 rovers to display pictures of their missions in Mars, and choose their dimentions. Click on the ❤ to save a picture to your favorites. Check them in the "My Pictures" section</p>
 		        </Col>
 		    </Row>
 		    <Row>
 		        <Col s={12}>
-		        <Dropdown 
+		        <Dropdown size={12}
 		            optionsToDisplay={ROVER_NAMES} 
 		            handleSelection={this.props.chooseRover}
 		            selectLabel={labels.rovers}/>
-		        <Dropdown 
-		            optionsToDisplay={PICTURES_TO_DISPLAY} 
-		            handleSelection={this.props.choosePicsToDisplay}
-		            selectLabel={labels.picsToDisplay}/>
 		        </Col>
 		    </Row>
 		    <Row>

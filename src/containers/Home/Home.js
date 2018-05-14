@@ -13,7 +13,6 @@ class Home extends Component {
 		chosenRover: 'Curiosity',
 		widthPic: 300,
 		heightPic: 300,
-		picsToDisplay: '6',
 		pictureData: null,
 		likedPictures: [],
 		loading: false,
@@ -25,11 +24,6 @@ class Home extends Component {
 
 	chooseRoverHandler = (event) => {
 		this.setState({chosenRover: event.target.value});
-
-	}
-
-	choosePicsToDisplayHandler = (event) => {
-		this.setState({picsToDisplay: event.target.value});
 	}
 
 	chooseWidthHandler = (event) => {
@@ -49,7 +43,7 @@ class Home extends Component {
 		function randomize(min, max) {
 	        return Math.floor(Math.random() * (max - min + 1) + min);
 	    }
-	    let solParameter = randomize(500, 2000);
+	    let solParameter = randomize(100, 2000);
 	    this.setState({loading: true, initialSearchBegan: true});
 		let url = 'https://api.nasa.gov/mars-photos/api/v1/rovers/' + this.state.chosenRover + '/photos?sol=' + solParameter + '&page=1&api_key=LQlfelUbO5f0rqk5UAS9REF5XhtwkG6oFX5TWOsc';
 			axios.get(url)
@@ -86,7 +80,6 @@ class Home extends Component {
 				initialSearchBegan={this.state.initialSearchBegan}
 				pictureWidth={this.state.widthPic}
 				pictureHeight={this.state.heightPic}
-				picsToDisplay={this.state.picsToDisplay}
 				earthDate={this.state.earthDate}
 				requestError={this.state.requestError}
 				solDate={this.state.solDate}
