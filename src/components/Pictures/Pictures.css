@@ -1,0 +1,12 @@
+.Pictures{
+	width: 100%;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	
+}
+
+.PictureCard {
+	position: relative;
+	 max-width: 100%;
+}

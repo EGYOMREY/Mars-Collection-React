@@ -18,7 +18,9 @@ const absoluteCSS = {
 	}
 
 const defaultColor = {
-	color: '#CBCBCB'
+	color: '#CBCBCB',
+	margin: 'auto',
+		zIndex: 1
 }
 
 loaderStyle = (props.absolutePosition) ? absoluteCSS : defaultColor;

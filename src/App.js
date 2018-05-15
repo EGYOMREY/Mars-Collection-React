@@ -6,15 +6,13 @@ import MyPictures from './containers/MyPictures/MyPictures';
 import LearnMore from './containers/LearnMore/LearnMore';
 
 
-import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom';
+import { Route, Switch, Redirect } from 'react-router-dom';
 
 class App extends Component {
   render() {
     return (
-     <BrowserRouter>
       <div>
         <Navigation />
-     
       <Switch>
         <Route path="/learnmore"  component={LearnMore} />
         <Route path="/mypictures"  component={MyPictures} />
@@ -22,8 +20,6 @@ class App extends Component {
         <Redirect to="/" />
       </Switch>
       </div>
-      </BrowserRouter>
-     
     );
   }
 }

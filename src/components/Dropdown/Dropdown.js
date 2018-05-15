@@ -6,7 +6,8 @@ const dropdown = (props) => {
 	let options = props.optionsToDisplay;
 	return (
 		<Input 
-		s={6} 
+		s={props.size || 6}
+		m={props.size || 6}
 		type='select' 
 		label={props.selectLabel} 
 		onChange={props.handleSelection}>

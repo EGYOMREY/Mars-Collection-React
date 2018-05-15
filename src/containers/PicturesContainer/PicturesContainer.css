@@ -1,0 +1,11 @@
+.PicturesContainer{
+        width:100%;
+    }
+
+
+@media (min-width: 769px){
+    .PicturesContainer{
+        width:75%
+    }
+}
+
