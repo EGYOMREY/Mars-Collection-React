@@ -5,16 +5,21 @@ import App from './App';
 import registerServiceWorker from './registerServiceWorker';
 import { BrowserRouter } from 'react-router-dom';
 //Redux
-import { createStore, applyMiddleware, compose } from 'redux';
+import { createStore, applyMiddleware, compose, combineReducers } from 'redux';
 import { Provider } from 'react-redux';
-import reducer from './store/reducer/reducer';
+import picturesReducer from './store/reducers/pictures';
+import menuContainerReducer from './store/reducers/menuContainer';
 import thunk from 'redux-thunk';
 
-//const store = createStore(reducer);
+const rootReducer = combineReducers({
+	menuContainer: menuContainerReducer,
+	pictures: picturesReducer,
+});
+
 
 // from redux-thunk
 const composeEnhancers = process.env.NODE_ENV === 'development' ? window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ : null || compose;
-const store = createStore(reducer, composeEnhancers(
+const store = createStore(rootReducer, composeEnhancers(
 	applyMiddleware(thunk)
 	));
 

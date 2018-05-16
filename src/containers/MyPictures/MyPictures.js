@@ -17,7 +17,7 @@ class MyPictures extends Component {
 
 const mapStateToProps = state => {
   return {
-    likedPictures: state.likedPictures
+    likedPictures: state.pictures.likedPictures
   };
 }
 

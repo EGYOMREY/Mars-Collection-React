@@ -31,12 +31,12 @@ const picturesContainer = props => {
 
 const mapStateToProps = state => {
 	return {
-		requestError: state.requestError,
-		initialSearchBegan: state.initialSearchBegan,
-		loading: state.loading,
-		pictureData: state.pictureData,
-		solDate: state.solDate,
-		earthDate: state.earthDate
+		requestError: state.menuContainer.requestError,
+		initialSearchBegan: state.menuContainer.initialSearchBegan,
+		loading: state.menuContainer.loading,
+		pictureData: state.menuContainer.pictureData,
+		solDate: state.menuContainer.solDate,
+		earthDate: state.menuContainer.earthDate
 	};
 };
 

@@ -51,10 +51,10 @@ const pictures = (props) => {
 
 const mapStateToProps = state => {
   return {
-    loading: state.loading,
-    pictureData: state.pictureData,
-    pictureWidth: state.widthPic,
-    pictureHeight: state.heightPic
+    loading: state.menuContainer.loading,
+    pictureData: state.menuContainer.pictureData,
+    pictureWidth: state.menuContainer.widthPic,
+    pictureHeight: state.menuContainer.heightPic
   };
 }
 

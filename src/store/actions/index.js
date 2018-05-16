@@ -2,6 +2,8 @@ export {
  	selectRover,
  	selectPictureWidth,
  	selectPictureHeight,
- 	beginSearch,
+ 	beginSearch
+ } from './menuContainer';
+ export {
  	addPictureToFavorites
- } from './actions';
+ } from './pictures';
