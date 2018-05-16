@@ -1,7 +1,7 @@
 import React, { Fragment } from "react";
 
 import "./Picture.css";
-import Loader from "../../UI/Loader/Loader";
+import Loader from "../UI/Loader/Loader";
 
 const picture = props => {
 	const pictureStyling = {

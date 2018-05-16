@@ -1,18 +1,14 @@
-import React from 'react';
+import React from "react";
 
-import MenuOptions from '../MenuOptions/MenuOptions';
-import PicturesContainer from '../PicturesContainer/PicturesContainer';
-
-//import axios from 'axios';
-
-import './Home.css';
+import MenuContainer from "./MenuContainer/MenuContainer";
+import PicturesContainer from "./PicturesContainer/PicturesContainer";
+import "./Home.css";
 
 const home = () => (
-			<div className="Home">
-				<MenuOptions />
-				<PicturesContainer />
-			</div>
-
-			);
+	<div className="Home">
+		<MenuContainer />
+		<PicturesContainer />
+	</div>
+);
 
 export default home;

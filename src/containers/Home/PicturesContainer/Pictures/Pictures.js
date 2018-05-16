@@ -1,15 +1,15 @@
 import React from 'react';
 
 import { Row, Col } from "react-materialize";
-import Picture from './Picture/Picture';
-import LikeButton from './LikeButton/LikeButton';
-import Loader from '../UI/Loader/Loader';
+import Picture from '../../../../components/Picture/Picture';
+import LikeButton from '../../../../components/UI/LikeButton/LikeButton';
+import Loader from '../../../../components/UI/Loader/Loader';
 
 import './Pictures.css';
 
 // Redux
 import { connect } from 'react-redux';
-import * as actions from '../../store/actions/index';
+import * as actions from '../../../../store/actions/index';
 
 const pictures = (props) => {
 

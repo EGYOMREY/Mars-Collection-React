@@ -14,7 +14,7 @@ const initialState = {
 }
 
 const selectRover = (state, action) => {
-	console.log(action.roverName);
+	//console.log(action.roverName);
 	return {
 		...state,
 		chosenRover: action.roverName
@@ -22,7 +22,7 @@ const selectRover = (state, action) => {
 }
 
 const selectPictureWidth = (state, action) => {
-	console.log(action.pictureWidth);
+	//console.log(action.pictureWidth);
 	return {
 		...state,
 		widthPic: action.pictureWidth
@@ -30,7 +30,7 @@ const selectPictureWidth = (state, action) => {
 }
 
 const selectPictureHeight = (state, action) => {
-	console.log(action.pictureHeight);
+	//console.log(action.pictureHeight);
 	return {
 		...state,
 		heightPic: action.pictureHeight
@@ -38,7 +38,7 @@ const selectPictureHeight = (state, action) => {
 }
 
 const selectSolDate = (state, action) => {
-	console.log(action.solDate);
+	//console.log(action.solDate);
 	return {
 		...state,
 		solDate: action.solDate

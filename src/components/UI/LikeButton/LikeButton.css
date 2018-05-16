@@ -1,0 +1,8 @@
+.LikeButton {
+	position: absolute;
+	width: 100%;
+	bottom: 10%;
+	display: flex;
+	justify-content: space-around;
+	z-index: 11;
+}

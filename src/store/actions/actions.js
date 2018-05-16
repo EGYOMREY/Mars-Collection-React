@@ -68,16 +68,13 @@ export const beginSearch = (rover, solDate) => {
 					axios.get(url)
 	        .then(response => {
 	        	if (response.data.photos.length > 0) {
-	        		console.log("Entre en response OK");
 	        		dispatch(successfulSearch(response.data, response.data.photos[0].earth_date));
 	        		
 	        	} else {
-	        		console.log("Entre en el ELSE");
 	        		dispatch(failedSearch());
 	        	}
 	        })
 	        .catch(error => {
-	        	console.log("Entre en el catch error");
 	        	dispatch(failedSearch());
 	        });
 	};

@@ -1,12 +1,12 @@
 import React, {Component} from 'react';
 import { Row, Button, Col } from 'react-materialize';
 
-import './MenuOptions.css';
-import Dropdown from '../../components/Dropdown/Dropdown';
+import './MenuContainer.css';
+import Dropdown from '../../../components/UI/Dropdown/Dropdown';
 
 //Redux
 import { connect } from 'react-redux';
-import * as actions from '../../store/actions/index';
+import * as actions from '../../../store/actions/index';
 
 const ROVER_NAMES = ['Curiosity', 'Opportunity', 'Spirit'];
 const PICTURE_SIZES = [300,400,500,600, 800];
@@ -38,7 +38,7 @@ shouldComponentUpdate (nextProps, nextState){
 
 	render () {
 		return (
-		<div className="Menu">
+		<div className="MenuContainer">
 		    <Row>
 		        <Col s={12}>
 		        <p>Welcome to the Mars Collection, where you can see pictures of the Red Planet. Select between the 3 rovers to display pictures of their missions in Mars, and choose their dimentions. Click on the ❤ to save a picture to your favorites. Check them in the "My Pictures" section</p>

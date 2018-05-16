@@ -1,4 +1,4 @@
-.Menu{
+.MenuContainer{
     padding-top: 0.8em;
     width:100%;
     text-align:center;
@@ -7,7 +7,7 @@
 
 }
 @media (min-width: 769px){
-    .Menu{
+    .MenuContainer{
         width:25%;
         display:-webkit-box;
         display:-ms-flexbox;
@@ -20,8 +20,3 @@
     }
 }
 
-.MenuButtonContainer {
-    display: flex;
- flex-wrap: wrap;
- justify-content: space-around;
-}
