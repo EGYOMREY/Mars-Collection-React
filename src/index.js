@@ -9,11 +9,13 @@ import { createStore, applyMiddleware, compose, combineReducers } from 'redux';
 import { Provider } from 'react-redux';
 import picturesReducer from './store/reducers/pictures';
 import menuContainerReducer from './store/reducers/menuContainer';
+import learnMoreReducer from './store/reducers/learnMore';
 import thunk from 'redux-thunk';
 
 const rootReducer = combineReducers({
 	menuContainer: menuContainerReducer,
 	pictures: picturesReducer,
+	learnMore: learnMoreReducer
 });
 
 

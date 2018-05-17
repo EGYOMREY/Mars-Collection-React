@@ -1,0 +1,42 @@
+.mars-main{
+    width:90%;
+    margin:auto;
+    color:#8f8f8f
+}
+.mars-main a{
+    color:#E64A19
+}
+.mars-main h1,.mars-main h2,.mars-main h3,.mars-main h4{
+    font-size: 1.5rem;
+    color:#795548;
+}
+
+.mars-main p{
+    padding:1em 2em
+}
+
+.mars-article__footer ul{
+    -webkit-box-orient:vertical;
+    -webkit-box-direction:normal;
+    -ms-flex-direction:column;
+    flex-direction:column;
+    margin-left:1em
+}
+.rovers{
+	display: flex;
+	flex-wrap:  wrap;
+    justify-content:space-around
+}
+.rovers img{
+    border:2px solid #FF5722;
+    width: 250px;
+    height: 250px;
+}
+.footer{
+    width:100%
+}
+@media (min-width: 769px){
+    .footer{
+        max-width:80%
+    }
+}

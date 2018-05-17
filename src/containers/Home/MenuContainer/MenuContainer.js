@@ -38,13 +38,9 @@ class MenuOptions extends Component {
 			<div className="MenuContainer">
 				<Row>
 					<Col s={12}>
-						<p>
-							Welcome! To see instructions click on the button
-							below
-						</p>
 						<Modal
 							header="Enjoy pictures from Mars"
-							trigger={<Button wave="light" className="grey lighten-1" icon="info"></Button>}>
+							trigger={<Button wave="light" className="grey lighten-1">Instructions</Button>}>
 							<p>
 								Welcome to the Mars Collection, where you can
 								see pictures of the Red Planet!. Select between

@@ -9,8 +9,7 @@ import './MyPictures.css';
 
 class MyPictures extends Component {
 
-	componentWillMount () {
-		// Bring the pictures which are in the LocalStorage and put them in the state.
+	componentDidMount () {
 		this.props.showLikedPictures();
 	}
 

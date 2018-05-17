@@ -7,3 +7,6 @@ export {
  export {
  	addPictureToFavorites
  } from './pictures';
+ export {
+ 	loadArticlesFromServer
+ } from './learnMore';
