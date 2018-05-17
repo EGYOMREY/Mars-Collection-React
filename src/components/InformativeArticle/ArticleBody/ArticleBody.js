@@ -1,10 +1,17 @@
 import React, { Fragment } from "react";
+import PropTypes from 'prop-types'
 
-const articleBody = props => (
+const ArticleBody = ({articleTitle, articleBody}) => (
 	<Fragment>
-		<h1>{props.articleTitle}</h1>
-		<p>{props.articleBody}</p>
+		<h1>{articleTitle}</h1>
+		<p>{articleBody}</p>
 	</Fragment>
 );
 
-export default articleBody;
+ArticleBody.propTypes = {
+  articleTitle: PropTypes.string.isRequired,
+  articleBody: PropTypes.string.isRequired
+}
+
+export default ArticleBody;
+

@@ -1,14 +1,13 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 import Curiosity from "../../../assets/rover_curiosity.jpg";
 import Opportunity from "../../../assets/rover_opportunity.jpg";
 import Spirit from "../../../assets/rover_spirit.jpg";
 
-import Loader from '../Loader/Loader';
-
-const figureObject = props => {
+const FigureObject = ({pictureName}) => {
 	let roverPicture = null;
-	switch (props.pictureAlt) {
+	switch (pictureName) {
 		case "Curiosity":
 			roverPicture = Curiosity;
 			break;
@@ -23,9 +22,14 @@ const figureObject = props => {
 
 	return (
 		<figure>
-			<img src={roverPicture} alt={props.pictureSource} />
-			<figcaption>{props.pictureSource}</figcaption>
+			<img src={roverPicture} alt={pictureName} />
+			<figcaption>{pictureName}</figcaption>
 		</figure>
 	);
 };
-export default figureObject;
+
+FigureObject.propTypes = {
+	pictureName: PropTypes.string.isRequired
+};
+
+export default FigureObject;

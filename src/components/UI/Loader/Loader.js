@@ -1,37 +1,40 @@
-import React from 'react';
+import React from "react";
+import PropTypes from "prop-types";
+import "./Loader.css";
 
-import './Loader.css';
+const Loader = ({centered}) => {
+	let loaderStyle = null;
 
-const loader = (props) => {
-
-let loaderStyle = null;
-
-const absoluteCSS = {
-		position: 'absolute',
-		margin: 'auto',
-		top: '0',
-		left: '0',
-		bottom: '0',
-		right: '0',
+	const centeredPosition = {
+		position: "absolute",
+		margin: "auto",
+		top: "0",
+		left: "0",
+		bottom: "0",
+		right: "0",
 		zIndex: 1,
-		color: '#CBCBCB'
-	}
+		color: "#CBCBCB"
+	};
 
-const defaultColor = {
-	color: '#CBCBCB',
-	margin: 'auto',
+	const defaultPosition = {
+		color: "#CBCBCB",
+		margin: "auto",
 		zIndex: 1
-}
+	};
 
-loaderStyle = (props.absolutePosition) ? absoluteCSS : defaultColor;
+	loaderStyle = centered ? centeredPosition : defaultPosition;
 
 	return (
-	<div className="la-fire la-2x" style={loaderStyle}>
-		    <div></div>
-		    <div></div>
-		    <div></div>
+		<div className="la-fire la-2x" style={loaderStyle}>
+			<div />
+			<div />
+			<div />
 		</div>
 	);
-}
+};
 
-export default loader
+Loader.propTypes = {
+	centered: PropTypes.bool
+};
+
+export default Loader;

@@ -22,11 +22,13 @@ class MenuOptions extends Component {
 	};
 
 	chooseWidthHandler = event => {
-		this.props.selectPictureWidth(event.target.value);
+		this.props.selectPictureWidth(+event.target.value);
+
 	};
 
 	chooseHeightHandler = event => {
-		this.props.selectPictureHeight(event.target.value);
+		this.props.selectPictureHeight(+event.target.value);
+
 	};
 
 	shouldComponentUpdate(nextProps, nextState) {

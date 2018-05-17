@@ -1,15 +1,8 @@
-.mars-article{
+.InformativeArticle{
     width:100%
 }
 @media (min-width: 769px){
-    .mars-article{
+    .InformativeArticle{
         max-width:80%
     }
-}
-.mars-article__footer ul{
-    -webkit-box-orient:vertical;
-    -webkit-box-direction:normal;
-    -ms-flex-direction:column;
-    flex-direction:column;
-    margin-left:1em
 }

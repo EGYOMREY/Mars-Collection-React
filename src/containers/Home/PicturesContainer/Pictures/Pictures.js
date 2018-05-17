@@ -37,7 +37,7 @@ const pictures = (props) => {
 		}
 
 		let displayPicturesComponent = props.loading ? (
-			<Loader defaultColor />
+			<Loader />
 		) : props.pictureData ? (
 			<Row>
 				<Col s={12} className="Pictures">

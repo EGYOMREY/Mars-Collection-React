@@ -22,8 +22,8 @@ class MyPictures extends Component {
 					<div className="PictureCard" key={index}>
 						<Picture
 							sourcePicture={ob}
-							pictureWidth="500"
-							pictureHeight="500"
+							pictureWidth={500}
+							pictureHeight={500}
 						/>
 					</div>
 				);

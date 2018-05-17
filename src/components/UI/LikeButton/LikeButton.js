@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import PropTypes from "prop-types";
 import { Button } from "react-materialize";
 import './LikeButton.css';
 
@@ -37,5 +38,10 @@ class LikeButton extends Component {
 		);
 	}
 }
+
+LikeButton.propTypes = {
+	likePicture: PropTypes.func.isRequired,
+	pictureSrc: PropTypes.string.isRequired
+};
 
 export default LikeButton;

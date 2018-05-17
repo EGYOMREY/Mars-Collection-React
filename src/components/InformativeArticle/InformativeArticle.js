@@ -1,11 +1,11 @@
 import React from "react";
+import PropTypes from 'prop-types'
 
 import ArticleBody from "./ArticleBody/ArticleBody";
 import "./InformativeArticle.css";
 
-const informativeArticle = props => {
-	let information = props.articleInfo;
-	let article = information.map((ob, index) => {
+const InformativeArticle = ({articleInfo}) => {
+	let article = articleInfo.map((ob, index) => {
 		return (
 			<ArticleBody
 				key={index}
@@ -14,7 +14,11 @@ const informativeArticle = props => {
 			/>
 		);
 	});
-	return <article className="mars-article">{article}</article>;
+	return <article className="InformativeArticle">{article}</article>;
 };
 
-export default informativeArticle;
+InformativeArticle.propTypes = {
+  articleInfo: PropTypes.array.isRequired,
+}
+
+export default InformativeArticle;

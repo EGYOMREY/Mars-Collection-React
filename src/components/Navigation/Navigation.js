@@ -6,9 +6,9 @@ import './Navigation.css';
 import NavigationItem from './NavigationItem/NavigationItem';
 
 
-const navigation = (props) => {
+const Navigation = (props) => {
 
-const brandColor = <span style={{color: "#212121", paddingLeft: "1em", fontFamily: 'Roboto', fontSize: '2.5rem'}}>Mars Collection</span>;
+const brandColor = <span className="BrandColor">Mars Collection</span>;
 
 	return (
 		<Navbar className="deep-orange darken-2 Navigation" brand={brandColor} right options={{ closeOnClick: true }}>
@@ -21,5 +21,5 @@ const brandColor = <span style={{color: "#212121", paddingLeft: "1em", fontFamil
 };
 
 
-export default navigation;
+export default Navigation;
 

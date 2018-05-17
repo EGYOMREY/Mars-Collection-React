@@ -25,8 +25,7 @@ componentDidMount () {
     const roverFigures = ROVER_INFORMATION.map((ob, index) => {
       return (
         <FigureObject
-          pictureSource={ob.name}
-          pictureAlt={ob.name}
+          pictureName={ob.name}
           key={index}
         />
       );
@@ -36,7 +35,7 @@ componentDidMount () {
     return (
       <div className="mars-main">
         <section className="mars-section">
-          {this.props.loading ? <Loader defaultColor/> : articles}
+          {this.props.loading ? <Loader /> : articles}
           <h2>Meet the Rovers!</h2>
           <div className="rovers">{roverFigures}</div>
           <footer className="mars-article__footer">

@@ -1,14 +1,15 @@
 import React, { Fragment } from "react";
+import PropTypes from 'prop-types'
 
 import "./Picture.css";
 import Loader from "../UI/Loader/Loader";
 
-const picture = props => {
+const Picture = ({pictureWidth, pictureHeight, sourcePicture}) => {
 	const pictureStyling = {
-		width: `${props.pictureWidth}px`,
-		height: `${props.pictureHeight}px`,
+		width: `${pictureWidth}px`,
+		height: `${pictureHeight}px`,
 		maxWidth: "inherit",
-		backgroundImage: `url(${props.sourcePicture})`,
+		backgroundImage: `url(${sourcePicture})`,
 		backgroundPosition: "center",
 		backgroundSize: "cover",
 		zIndex: 10,
@@ -19,10 +20,17 @@ const picture = props => {
 
 	return (
 		<Fragment>
-			<Loader absolutePosition />
+			<Loader centered />
 			<div style={pictureStyling} />
 		</Fragment>
 	);
 };
 
-export default picture;
+Picture.propTypes = {
+  pictureWidth: PropTypes.number.isRequired,
+  pictureHeight: PropTypes.number.isRequired,
+  sourcePicture: PropTypes.string.isRequired
+};
+
+
+export default Picture;
