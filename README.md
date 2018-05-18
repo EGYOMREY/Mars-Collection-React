@@ -1,5 +1,5 @@
 # Mars Collection
-Mars Collection is a single-page application which displays pictures taken by [NASA's rovers](https://en.wikipedia.org/wiki/Mars_rover): Curiosity, Opportunity and Spirit. The pictures display depending on the rover and the size chosen. Pictures can also be "liked" and saved to be seen in a different page called "My Pictures". For more information about Mars, there's a page called "Learn More"
+[Mars Collection](https://mars-collection.firebaseapp.com/) is a single-page application which displays pictures taken by [NASA's rovers](https://en.wikipedia.org/wiki/Mars_rover): Curiosity, Opportunity and Spirit. The pictures display depending on the rover and the size chosen. Pictures can also be "liked" and saved to be seen in a different page called "My Pictures". For more information about Mars, there's a page called "Learn More"
 
 ## Desktop Version
  ![image](https://i.imgur.com/1lLy6mN.png)
@@ -9,6 +9,81 @@ Mars Collection is a single-page application which displays pictures taken by [N
 
 # Motivation
 The motivation for this project was to practice building something interesting with React, and to add different features, like live resizing of the pictures already displayed, routing and easy state management with Redux. This is a "copy" of my favorite project: [Mars Collection](https://egyomrey.github.io/Mars-Collection/build/index.html) which I built initialy with jQuery and ES6. 
+
+# Folder Structure 
+<pre>
+src/  
+|  
+|– assets/
+|  
+|– components/  
+|   |– InformativeArticle/
+|   	|– ArticleBody/
+|	    |– _ArticleBody.js
+|  	|– _InformativeArticle.js
+|  	|– _InformativeArticle.css
+|   |– MessageDisplayer/
+|  	|– _MessageDisplayer.js
+|  	|– _MessageDisplayer.css
+|   |– Navigation/
+|   	|– NavigationItem/
+|	    |– _NavigationItem.js
+|	    |– _NavigationItem.css
+|  	|– _Navigation.js
+|  	|– _Navigation.css
+|   |– Picture/
+|  	|– _Picture.js
+|  	|– _Picture.css
+|   |– UI/ 
+|   	|– Dropdown/
+|	    |– _Dropdown.js
+|   	|– FigureObject/
+|	    |– _FigureObject.js
+|   	|– LikeButton/
+|	    |– _LikeButton.js
+|	    |– _LikeButton.css
+|   	|– Loader/
+|	    |– _Loader.js
+|	    |– _Loader.css       
+|  
+|– containers/ 
+|   |– Home/
+|   	|– MenuContainer/
+|	    |– _MenuContainer.js
+|	    |– _MenuContainer.css
+|   	|– PicturesContainer/
+|   	    |– Pictures/
+|	        |– _Pictures.js
+|	        |– _Pictures.css
+|	    |– _PicturesContainer.css
+|	    |– _PicturesContainer.css
+|   	|– Home.js
+|   	|– Home.css
+|   |– LearnMore/
+|  	|– _LearnMore.js
+|  	|– _LearnMore.css
+|   |– MyPictures/
+|  	|– _MyPictures.js
+|  	|– _MyPictures.css
+|
+|– store/
+|   |– actions/
+|   	|– actionTypes.js
+|   	|– index.js
+|   	|– learnMore.js
+|   	|– menuContainer.js
+|   	|– pictures.js
+|   |– reducers/ 
+|   	|– learnMore.js
+|   	|– menuContainer.js
+|   	|– pictures.js    
+| 
+|– App.js
+|– index.css
+|– index.js 
+
+</pre>
+
 
 # Project requirements
 
