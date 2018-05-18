@@ -117,3 +117,7 @@ This project was bootstrapped with [create-react-app](https://github.com/faceboo
 Used [React Materialize](https://react-materialize.github.io) to add styling
 
 
+### Special thanks
+To [@chrisccerami](https://twitter.com/chrisccerami) for maintaining the amazing API used which can be found in this [repository](https://github.com/chrisccerami/mars-photo-api).
+
+To [Styling Cross-Browser Compatible Range Inputs with Sass / SCSS](https://github.com/darlanrod/input-range-scss) for the compatible range input.
