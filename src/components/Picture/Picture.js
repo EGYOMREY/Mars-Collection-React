@@ -10,7 +10,8 @@ const Picture = ({ pictureWidth, pictureHeight, sourcePicture }) => {
 		const pictureStyling = {
 			width: `${pictureWidth}px`,
 			height: `${pictureHeight}px`,
-			maxWidth: "inherit",
+			maxWidth: "100%",
+			maxHeight: "100%",
 			backgroundImage: `url(${sourcePicture})`,
 			backgroundPosition: "center",
 			backgroundSize: "cover",

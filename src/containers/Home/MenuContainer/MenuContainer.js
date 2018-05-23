@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Row, Button, Col, Modal } from "react-materialize";
+import { Row, Button, Col, Modal, Collection, CollectionItem } from "react-materialize";
 
 import "./MenuContainer.css";
 import Dropdown from "../../../components/UI/Dropdown/Dropdown";
@@ -41,19 +41,18 @@ class MenuOptions extends Component {
 				<Row>
 					<Col s={12}>
 						<Modal
-							header="Enjoy pictures from Mars"
+							header="How does this work?"
 							trigger={<Button wave="light" className="grey lighten-1">Instructions</Button>}>
-							<p>
-								Welcome to the Mars Collection, where you can
-								see pictures of the Red Planet!. Select between
-								the 3 rovers (Curiosity, Opportunity and Spirit)
-								to display pictures of their missions in Mars,
-								you can also choose the dimention of the
-								pictures before and after the search. Click on
-								the ❤ Button to save a picture to your
+							<Collection>
+							  <CollectionItem>Select between the 3 rovers (Curiosity, Opportunity and Spirit)
+								to display pictures of their missions in Mars</CollectionItem>
+							  <CollectionItem>Choose the dimention of the
+								pictures before and after the search</CollectionItem>
+							  <CollectionItem>Click on the ❤ Button to save a picture to your
 								favorites. To see your saved pictures, check out
-								the <strong>"My Pictures"</strong> section
-							</p>
+								the <strong>"My Pictures"</strong> section</CollectionItem>
+							  <CollectionItem>Click on a picture to see it full size</CollectionItem>
+							</Collection>
 						</Modal>
 					</Col>
 				</Row>
