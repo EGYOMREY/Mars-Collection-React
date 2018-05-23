@@ -1,7 +1,7 @@
 # Mars Collection
 [Mars Collection](https://mars-collection.firebaseapp.com/) is a single-page application which displays pictures taken by [NASA's rovers](https://en.wikipedia.org/wiki/Mars_rover): Curiosity, Opportunity and Spirit. The pictures display depending on the rover and the size chosen. Pictures can also be "liked" and saved to be seen in a different page called "My Pictures". For more information about Mars, there's a page called "Learn More".
 
-[API used](https://github.com/chrisccerami/mars-photo-api)
+[API used to get the pictures](https://github.com/chrisccerami/mars-photo-api)
 
 ## Desktop Version
  ![image](https://i.imgur.com/1lLy6mN.png)
@@ -21,52 +21,52 @@ src/
 |– components/  
 |   |– InformativeArticle/
 |   	|– ArticleBody/
-|	    |– _ArticleBody.js
-|  	|– _InformativeArticle.js
-|  	|– _InformativeArticle.css
+|	    	|– _ArticleBody.js
+|  		|– _InformativeArticle.js
+|  		|– _InformativeArticle.css
 |   |– MessageDisplayer/
-|  	|– _MessageDisplayer.js
-|  	|– _MessageDisplayer.css
+|  		|– _MessageDisplayer.js
+|  		|– _MessageDisplayer.css
 |   |– Navigation/
 |   	|– NavigationItem/
-|	    |– _NavigationItem.js
-|	    |– _NavigationItem.css
-|  	|– _Navigation.js
-|  	|– _Navigation.css
+|	    	|– _NavigationItem.js
+|	    	|– _NavigationItem.css
+|  		|– _Navigation.js
+|  		|– _Navigation.css
 |   |– Picture/
-|  	|– _Picture.js
-|  	|– _Picture.css
+|  		|– _Picture.js
+|  		|– _Picture.css
 |   |– UI/ 
 |   	|– Dropdown/
-|	    |– _Dropdown.js
+|	    	|– _Dropdown.js
 |   	|– FigureObject/
-|	    |– _FigureObject.js
+|	    	|– _FigureObject.js
 |   	|– LikeButton/
-|	    |– _LikeButton.js
-|	    |– _LikeButton.css
+|	    	|– _LikeButton.js
+|	    	|– _LikeButton.css
 |   	|– Loader/
-|	    |– _Loader.js
-|	    |– _Loader.css       
+|	    	|– _Loader.js
+|	    	|– _Loader.css       
 |  
 |– containers/ 
 |   |– Home/
 |   	|– MenuContainer/
-|	    |– _MenuContainer.js
-|	    |– _MenuContainer.css
+|	    	|– _MenuContainer.js
+|	    	|– _MenuContainer.css
 |   	|– PicturesContainer/
 |   	    |– Pictures/
-|	        |– _Pictures.js
-|	        |– _Pictures.css
-|	    |– _PicturesContainer.css
-|	    |– _PicturesContainer.css
+|	        	|– _Pictures.js
+|	        	|– _Pictures.css
+|	    	|– _PicturesContainer.css
+|	    	|– _PicturesContainer.css
 |   	|– Home.js
 |   	|– Home.css
 |   |– LearnMore/
-|  	|– _LearnMore.js
-|  	|– _LearnMore.css
+|  		|– _LearnMore.js
+|  		|– _LearnMore.css
 |   |– MyPictures/
-|  	|– _MyPictures.js
-|  	|– _MyPictures.css
+|  		|– _MyPictures.js
+|  		|– _MyPictures.css
 |
 |– store/
 |   |– actions/
