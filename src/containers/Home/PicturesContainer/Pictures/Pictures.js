@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 
 import { Row, Col } from "react-materialize";
 import Picture from '../../../../components/Picture/Picture';
@@ -11,11 +11,12 @@ import './Pictures.css';
 import { connect } from 'react-redux';
 import * as actions from '../../../../store/actions/index';
 
-const pictures = (props) => {
+export class Pictures extends Component {
 
-	let photosToDisplay = null;
-		if (props.pictureData) {
-			const photosArray = props.pictureData.photos;
+	render() {
+		let photosToDisplay = null;
+		if (this.props.pictureData) {
+			const photosArray = this.props.pictureData.photos;
 			let filteredArray = photosArray.filter((el, index) => {
 				return index % 2 === 1;
 			});
@@ -24,29 +25,30 @@ const pictures = (props) => {
 					<div className="PictureCard" key={ob.id}>
 						<Picture
 							sourcePicture={ob.img_src}
-							pictureWidth={props.pictureWidth}
-							pictureHeight={props.pictureHeight}
+							pictureWidth={this.props.pictureWidth}
+							pictureHeight={this.props.pictureHeight}
 						/>
 						<LikeButton
-							likePicture={props.addToFavoritesHandler}
+							likePicture={this.props.addToFavoritesHandler}
 							pictureSrc={ob.img_src}
 						/>
 					</div>
 				);
 			});
 		}
-
-		let displayPicturesComponent = props.loading ? (
+		let displayPicturesComponent = null;
+		displayPicturesComponent = this.props.loading ? (
 			<Loader />
-		) : props.pictureData ? (
+		) : this.props.pictureData ? (
 			<Row>
 				<Col s={12} className="Pictures">
 					{photosToDisplay}
 				</Col>
 			</Row>
 		) : null;
+		return displayPicturesComponent;
+	}
 
-	return displayPicturesComponent;
 }
 
 const mapStateToProps = state => {
@@ -65,4 +67,4 @@ const mapDispatchToProps = dispatch => {
 };
 
 
-export default connect(mapStateToProps,mapDispatchToProps)(pictures);
+export default connect(mapStateToProps,mapDispatchToProps)(Pictures);
