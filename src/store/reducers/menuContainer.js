@@ -1,5 +1,9 @@
 import * as actionTypes from "../actions/actionTypes";
 
+function randomize(min, max) {
+	return Math.floor(Math.random() * (max - min + 1) + min);
+}
+
 const initialState = {
 	chosenRover: "Curiosity",
 	widthPic: 300,
@@ -9,7 +13,7 @@ const initialState = {
 	initialSearchBegan: false,
 	earthDate: null,
 	requestError: false,
-	solDate: null
+	solDate: randomize(800, 2000)
 };
 
 const selectRover = (state, action) => {

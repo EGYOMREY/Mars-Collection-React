@@ -30,7 +30,7 @@ export const selectPictureHeight = (height) => {
 export const selectSolDate = () => {
 	return {
 		type: actionTypes.SELECT_SOL_DATE,
-		solDate: randomize(600, 2000)
+		solDate: randomize(800, 2000)
 	}
 }
 
