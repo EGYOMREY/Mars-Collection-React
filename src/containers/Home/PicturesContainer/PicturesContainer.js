@@ -17,9 +17,7 @@ export class PicturesContainer extends Component {
 		} else if (this.props.loading) {
 			messageFeedback = "Loading...";
 		} else if (this.props.pictureData) {
-			messageFeedback = `Showing Pictures from Mars taken on Sol date: ${
-				this.props.solDate
-			}, Earth date: ${this.props.earthDate}`;
+			messageFeedback = `Showing Pictures from Mars taken on Earth date: ${this.props.earthDate}`;
 		}
 
 		return (
@@ -37,7 +35,6 @@ const mapStateToProps = state => {
 		initialSearchBegan: state.menuContainer.initialSearchBegan,
 		loading: state.menuContainer.loading,
 		pictureData: state.menuContainer.pictureData,
-		solDate: state.menuContainer.solDate,
 		earthDate: state.menuContainer.earthDate
 	};
 };

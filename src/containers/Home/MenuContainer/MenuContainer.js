@@ -82,10 +82,18 @@ class MenuOptions extends Component {
 				</Row>
 				<Row>
 					<Button
-						onClick={() => this.props.searchForPictures(this.props.rover,this.props.solDate)}
+						onClick={() => this.props.searchForPictures(this.props.rover)}
 						wave="light"
 						className="deep-orange">
 						Search
+					</Button>
+				</Row>
+				<Row>
+					<Button
+						onClick={() => this.props.searchForPictures(this.props.rover, 'latest')}
+						wave="light"
+						className="blue darken-2">
+						Latest Pictures
 					</Button>
 				</Row>
 			</div>
@@ -95,8 +103,7 @@ class MenuOptions extends Component {
 
 const mapStateToProps = state => {
 	return {
-		rover: state.menuContainer.chosenRover,
-		solDate: state.menuContainer.solDate
+		rover: state.menuContainer.chosenRover
 	};
 };
 
@@ -107,8 +114,8 @@ const mapDispatchToProps = dispatch => {
 			dispatch(actions.selectPictureWidth(width)),
 		selectPictureHeight: height =>
 			dispatch(actions.selectPictureHeight(height)),
-		searchForPictures: (rover, solDate) =>
-			dispatch(actions.beginSearch(rover, solDate))
+		searchForPictures: (rover, typeOfSearch) =>
+			dispatch(actions.beginSearch(rover, typeOfSearch))
 	};
 };
 

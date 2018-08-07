@@ -27,10 +27,10 @@ export const selectPictureHeight = (height) => {
 	};
 };
 
-export const selectSolDate = () => {
+export const selectSolDate = (solDate) => {
 	return {
 		type: actionTypes.SELECT_SOL_DATE,
-		solDate: randomize(800, 2000)
+		solDate: solDate
 	}
 }
 
@@ -55,20 +55,42 @@ export const failedSearch = () => {
 }
 
 
-export const beginSearch = (rover, solDate) => {
+export const beginSearch = (rover, typeOfSearch) => {
 	return dispatch => {
-		dispatch(selectSolDate());
 		dispatch(searchBegin());
-		let url = 'https://api.nasa.gov/mars-photos/api/v1/rovers/' + rover + '/photos?sol=' + solDate + '&page=1&api_key=LQlfelUbO5f0rqk5UAS9REF5XhtwkG6oFX5TWOsc';
-					axios.get(url)
+		const solDate = randomize(800, 2000);
+		dispatch(selectSolDate(solDate));
+		
+		//https://mars-photos.herokuapp.com/api/v1/rovers/curiosity/latest_photos
+		let url = '';
+		if (typeOfSearch === undefined) {
+			url = 'https://api.nasa.gov/mars-photos/api/v1/rovers/' + rover + '/photos?sol=' + solDate + '&page=1&api_key=LQlfelUbO5f0rqk5UAS9REF5XhtwkG6oFX5TWOsc';
+		} else {
+			url = 'https://api.nasa.gov/mars-photos/api/v1/rovers/'+ rover +'/latest_photos?&api_key=LQlfelUbO5f0rqk5UAS9REF5XhtwkG6oFX5TWOsc';
+		}
+		
+			axios.get(url)
 	        .then(response => {
-	        	if (response.data.photos.length > 0) {
-	        		dispatch(successfulSearch(response.data, response.data.photos[0].earth_date));
+	        	let arrayOfRoverPictures = null;
+	        	// Here we rename the property latest_photos for photos, so the
+	        	//last if statemente doesn't change
+	        	const renameProp = (oldProp,newProp,{ [oldProp]: p }) => {
+	        		return {[newProp]: p};
+					}
+	        	if (response.data.latest_photos !== undefined) {//si es search latest
+	        		arrayOfRoverPictures = renameProp('latest_photos', 'photos', response.data);
+	        	} else {
+	        		arrayOfRoverPictures = response.data;
+	        	}        	
+
+	        	if (arrayOfRoverPictures.photos.length > 0) {
+	        		dispatch(successfulSearch(arrayOfRoverPictures, arrayOfRoverPictures.photos[0].earth_date));
 	        	} else {
 	        		dispatch(failedSearch());
 	        	}
 	        })
 	        .catch(error => {
+	        	console.log(error);
 	        	dispatch(failedSearch());
 	        });
 	};
