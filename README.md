@@ -4,7 +4,7 @@
 [API used to get the pictures](https://github.com/chrisccerami/mars-photo-api)
 
 ## Desktop Version
- ![image](https://i.imgur.com/1lLy6mN.png)
+ ![image](https://i.imgur.com/kJTGpmD.png)
  
 ## Mobile Version
  ![image](https://i.imgur.com/fgtUcEH.png)
