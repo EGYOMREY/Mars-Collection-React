@@ -21,10 +21,11 @@ export class Pictures extends Component {
 				return index % 2 === 1;
 			});
 			photosToDisplay = filteredArray.map(ob => {
+				let httpsSrc = ob.img_src.replace("http", "https");
 				return (
 					<div className="PictureCard" key={ob.id}>
 						<Picture
-							sourcePicture={ob.img_src}
+							sourcePicture={httpsSrc}
 							pictureWidth={this.props.pictureWidth}
 							pictureHeight={this.props.pictureHeight}
 						/>
