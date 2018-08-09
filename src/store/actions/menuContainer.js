@@ -66,7 +66,7 @@ export const beginSearch = (rover, typeOfSearch) => {
 		if (typeOfSearch === undefined) {
 			url = 'https://api.nasa.gov/mars-photos/api/v1/rovers/' + rover + '/photos?sol=' + solDate + '&page=1&api_key=LQlfelUbO5f0rqk5UAS9REF5XhtwkG6oFX5TWOsc';
 		} else {
-			url = 'https://api.nasa.gov/mars-photos/api/v1/rovers/'+ rover +'/latest_photos?&api_key=LQlfelUbO5f0rqk5UAS9REF5XhtwkG6oFX5TWOsc';
+			url = 'https://api.nasa.gov/mars-photos/api/v1/rovers/'+ rover +'/latest_photos?api_key=LQlfelUbO5f0rqk5UAS9REF5XhtwkG6oFX5TWOsc';
 		}
 		
 			axios.get(url)
@@ -90,7 +90,7 @@ export const beginSearch = (rover, typeOfSearch) => {
 	        	}
 	        })
 	        .catch(error => {
-	        	console.log(error);
+	        	console.log('Error: ', error);
 	        	dispatch(failedSearch());
 	        });
 	};

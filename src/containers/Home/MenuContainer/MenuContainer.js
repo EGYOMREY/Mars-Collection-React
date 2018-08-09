@@ -52,6 +52,7 @@ class MenuOptions extends Component {
 								favorites. To see your saved pictures, check out
 								the <strong>"My Pictures"</strong> section</CollectionItem>
 							  <CollectionItem>Click on a picture to see it full size</CollectionItem>
+							   <CollectionItem>It is recommended to use this webapp in desktop to get the best out of the pictures</CollectionItem>
 							</Collection>
 						</Modal>
 					</Col>
