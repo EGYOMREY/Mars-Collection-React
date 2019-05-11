@@ -6,7 +6,7 @@ import './Navigation.css';
 import NavigationItem from './NavigationItem/NavigationItem';
 
 
-const Navigation = (props) => {
+const Navigation = () => {
 
 const brandColor = <span className="BrandColor">Mars Collection</span>;
 
