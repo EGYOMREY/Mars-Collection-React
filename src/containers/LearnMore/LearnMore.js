@@ -71,7 +71,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
     return {
-        loadArticlesFromServer: (pictureSource) => dispatch(actions.loadArticlesFromServer())
+        loadArticlesFromServer: () => dispatch(actions.loadArticlesFromServer())
     };
 };
 

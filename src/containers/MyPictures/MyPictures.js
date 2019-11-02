@@ -51,7 +51,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
     return {
-        showLikedPictures: (pictureSource) => dispatch(actions.addPictureToFavorites())
+        showLikedPictures: () => dispatch(actions.addPictureToFavorites())
     };
 };
 

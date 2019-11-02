@@ -17,9 +17,7 @@ export class Pictures extends Component {
 		let photosToDisplay = null;
 		if (this.props.pictureData) {
 			const photosArray = this.props.pictureData.photos;
-			//let filteredArray = photosArray.filter((el, index) => {
-			//	return index % 2 === 1;
-			//});
+
 			photosToDisplay = photosArray.map(ob => {
 				let httpsSrc = ob.img_src.replace("http", "https");
 				return (

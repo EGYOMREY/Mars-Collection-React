@@ -31,7 +31,7 @@ class MenuOptions extends Component {
 
 	};
 
-	shouldComponentUpdate(nextProps, nextState) {
+	shouldComponentUpdate() {
 		return false;
 	}
 

@@ -8,9 +8,7 @@ import LearnMore from './containers/LearnMore/LearnMore';
 
 import { Route, Switch, Redirect } from 'react-router-dom';
 
-class App extends Component {
-  render() {
-    return (
+const App = () => (
       <div>
         <Navigation />
       <Switch>
@@ -21,7 +19,6 @@ class App extends Component {
       </Switch>
       </div>
     );
-  }
-}
+
 
 export default App;
